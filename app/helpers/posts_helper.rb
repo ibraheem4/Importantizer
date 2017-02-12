@@ -29,6 +29,13 @@ module PostsHelper
     get_summary(make_to_text)
   end
 
+  def summarize_post
+    # summarize.map!(&:chop)
+    p 'posts' * 10
+    p posts = key_words(summarize)
+    posts.sort_by(&:created_at)
+  end
+
   def send_message(phone_number, alert_message)
     client = Twilio::REST::Client.new ENV['TWILIO_NUMBER'], ENV['TWILIO_AUTH_TOKEN']
 

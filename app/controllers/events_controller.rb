@@ -72,8 +72,8 @@ class EventsController < ApplicationController
     #     }
     #   }
     # })
-
-    p respose = HTTParty.post(url, body: "to=#{toWho}&token=#{token}&text=#{text}&notification=IMPORTANT")
+    styled_text = style_important(text)
+    p respose = HTTParty.post(url, body: "to=#{toWho}&token=#{token}&flockml=#{styled_text}")
     # , 
     # :query_string_normalizer => proc {|query|
     # query.map do |key, value|

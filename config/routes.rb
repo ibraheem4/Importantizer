@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   post 'send' => 'events#send_message'
   get 'search' => 'posts#search'
   post 'sms' => 'posts#sms'
+  post 'summary' => 'posts#summary'
 end

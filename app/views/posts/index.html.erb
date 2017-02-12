@@ -15,7 +15,8 @@
     <div class="sender_or_info">
       <div class="picWrapper">
         <div class="displayPic" title="">
-          <img src="https://i.flockusercontent2.com/geeehzzh0t8tgyzz?r=1157408321" class="senderOpenImage">
+          <% tkn = Event.find_by(user_id: post.user_id).token %>
+          <img src=<%= get_user_info(post.user_id, tkn)[:profile_image] %>>
         </div>
         <div class="chat_message_sender" style="cursor: pointer;"><%=post.user_id  %></div>
       </div>

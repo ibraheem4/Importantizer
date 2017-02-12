@@ -73,7 +73,7 @@ class EventsController < ApplicationController
     #   }
     # })
 
-    p respose = HTTParty.post(url, body: "to=#{toWho}&token=#{token}&text=#{text}")
+    p respose = HTTParty.post(url, body: "to=#{toWho}&token=#{token}&text=#{text}&notification=IMPORTANT")
     # , 
     # :query_string_normalizer => proc {|query|
     # query.map do |key, value|

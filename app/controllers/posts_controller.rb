@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 	include PostsHelper
 	helper_method :search_params
 	def index
-		@posts = display_with_key_words(search_params)
+		@posts = display_without_key_words
     response.headers.except! 'X-Frame-Options'
 	end
 
@@ -17,12 +17,11 @@ class PostsController < ApplicationController
 		end
 	end
 
-
+	def search
+		@posts = display_with_key_words(search_params)
+	end
 
 	def search_params
-		output = []
-		params.each do |key,value|
-			if key.inlcude?("search") then output << value end
-		end
+		search_arr(params[:search])
 	end
 end

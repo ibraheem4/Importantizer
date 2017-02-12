@@ -4,6 +4,13 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		p params
+		@user_id = params['from']
+		@text = params['text']
+		sleep(2)
+		@imp =  Important.find_by(text: @text)
+
+		if @text == nil
+			Post.create(text: @text, user_id: @user_id)
+		end
 	end
 end

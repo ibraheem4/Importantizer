@@ -1,35 +1,5 @@
-<h1>Important Messages</h1>
+<%= react_component('Post', {posts: @posts}, {prerender: false}) %>
 
-<div>
-  <span>
-    <strong>vilde</strong>.
-    joined #general. Also, <a href="/team/yusuke" target="/team/yusuke">@yusuke</a> joined..
-  </span>
-</div>
-
-<div>
-  <%= form_tag search_path, method: :get, class: "navbar-form navbar-left search-form" do %>
-    <%= text_field_tag(
-        :search,
-        params[:search],
-        placeholder: "Search",
-        class: "form-control"
-    ) %>
-  <% end %>
-</div>
-
-<div>
-  <ul>
-    <% @posts.each do |post| %>
-      <li><%=post.text  %></li>
-    <% end %>
-  </ul>
-</div>
 <style>
-  body {
-  margin: 0px;
-  font-family: "Proxima Nova",Arial,sans-serif;
-  }
-</style>
 
-<style type="text/css">@import url(https://apps-static.flock.co/fonts/proxima-nova-a374edd1bfd78ad243eed7067a7c72053d0b6877/proxima-nova.css);</style>-
+</style>

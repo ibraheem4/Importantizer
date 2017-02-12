@@ -15,10 +15,13 @@
     <div class="sender_or_info">
       <div class="picWrapper">
         <div class="displayPic" title="">
+          <% unless Event.find_by(user_id: post.user_id) == nil %>
           <% tkn = Event.find_by(user_id: post.user_id).token %>
+          
           <img src=<%= get_user_info(post.user_id, tkn)[:profile_image] %>>
         </div>
         <div class="chat_message_sender" style="cursor: pointer;"><%= get_user_info(post.user_id, tkn)[:first_name] %> <%= get_user_info(post.user_id, tkn)[:last_name] %></div>
+        <% end %>
       </div>
       <div class="senderChild">
         <div class="minute_separator">
@@ -46,9 +49,10 @@
 
 <style type="text/css">@import url(https://apps-static.flock.co/fonts/proxima-nova-a374edd1bfd78ad243eed7067a7c72053d0b6877/proxima-nova.css);</style>
 
-
+<br>
+<%= render partial: 'summarize', locals: {messages_posts: summarize} %>
+<br>
 <div class="sms-button">
-<%= link_to "Message", sms_path, method: :post, remote: true%>
+<%= link_to "Send Out Messages", sms_path, method: :post, remote: true%>
 </div>
 
-<%= render partial: 'summarize', locals: {messages_posts: summarize} %>

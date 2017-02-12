@@ -5,6 +5,16 @@ body {
 
 @import url(https://apps-static.flock.co/fonts/proxima-nova-a374edd1bfd78ad243eed7067a7c72053d0b6877/proxima-nova.css);
 
+.chat_message_body:hover {
+  background-color: #fcf8e3;
+  border-color: #faf2cc;
+  color: #8a6d3b;
+}
+
+.chat_message_body {
+  padding-left: 5px;
+}
+
 /* line 537, ../conversation/styles/_MessageArea.scss */
 .chat_message_sender {
   color: #454545;

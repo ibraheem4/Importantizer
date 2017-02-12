@@ -30,7 +30,7 @@ module EventsHelper
   def key_words(arr)
     output = []
     arr.each do |word|
-      output << Post.all.select{|post| /#{word}/.match(post.text)}
+      output << Post.all.select{|post| /#{word}/.match(post.text) != nil}
     end
     output.flatten.uniq
   end

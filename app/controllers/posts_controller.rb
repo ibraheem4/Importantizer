@@ -29,8 +29,8 @@ class PostsController < ApplicationController
 	end
 
 	def sms
-		@posts = display_with_key_words(search_params)
-		message = render partial: 'posts/sms'
+		@posts = display_without_key_words
+    message = render_to_string 'posts/sms.html'
 		send_message(ENV['NUMBER'], message)
 		respond_to do |format|
 			format.js {}

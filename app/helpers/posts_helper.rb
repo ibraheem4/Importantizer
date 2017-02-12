@@ -1,6 +1,6 @@
 module PostsHelper
   include TextSummarizerHelper
-
+  include Twilio
 
 
 
@@ -30,10 +30,10 @@ module PostsHelper
   end
 
   def send_message(phone_number, alert_message)
-    twilio_number = Twilio::Rest::CLient.new ENV['TWILIO_NUMBER'], ENV['TWILIO_AUTH_TOKEN']
+    client = Twilio::REST::Client.new ENV['TWILIO_NUMBER'], ENV['TWILIO_AUTH_TOKEN']
 
     client.messages.create(
-    from: twilio_number,
+    from: "+1 985-241-6556",
     to: phone_number,
     body: alert_message,
     # media_url: image_url

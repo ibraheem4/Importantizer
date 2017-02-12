@@ -1,1 +1,8 @@
-<%= react_component('Post', {posts: @posts}, {prerender: false}) %>
+<%# react_component('Post', {posts: @posts}, {prerender: false}) %>
+
+<!-- text summarizer test -->
+<%= summarize %>
+
+<div class="sms-button">
+<%= link_to "Message", sms_path, method: :post, remote: true%>
+</div>

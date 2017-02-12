@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 
 	def search
 		@posts = display_with_key_words(search_params)
+    @params = search_params()
     p 'test' * 10
 		respond_to do |format|
 			format.js {}
@@ -30,13 +31,7 @@ class PostsController < ApplicationController
 	def sms
 		@posts = display_with_key_words(search_params)
 		message = render partial: 'posts/sms'
-		send_message("phone number", message)
-
-		# numbers.each do |number|
-		#
-		# end
-
-
+		send_message(ENV['NUMBER'], message)
 
 		respond_to do |format|
 			format.js {}

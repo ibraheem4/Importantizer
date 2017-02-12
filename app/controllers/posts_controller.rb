@@ -26,6 +26,22 @@ class PostsController < ApplicationController
 		end
 	end
 
+	def sms
+		@posts = display_with_key_words(search_params)
+		message = render partial: 'posts/sms'
+		send_message("phone number", message)
+
+		# numbers.each do |number|
+		#
+		# end
+
+
+
+		respond_to do |format|
+			format.js {}
+		end
+	end
+
 	def search_params
 
 		search_arr(params[:search])

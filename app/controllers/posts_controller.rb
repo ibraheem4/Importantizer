@@ -19,18 +19,12 @@ class PostsController < ApplicationController
 
 	def search
 		@posts = display_with_key_words(search_params)
+    render "index"
 	end
 
 	def search_params
-<<<<<<< HEAD
-		# output = []
-		# params.each do |key,value|
-		# 	if key.include?("search") then output << value end
-		# end
-    []
-=======
+
 		search_arr(params[:search])
->>>>>>> b96defa701b92057abab41fb039951bfa2a68ff1
 	end
 end
 

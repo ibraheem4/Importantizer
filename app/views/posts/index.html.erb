@@ -15,17 +15,14 @@
         placeholder: "Search",
         class: "form-control"
     ) %>
+    <%= button_to 'Search',search_path, method: :get  %>
   <% end %>
 </div>
 
 <div>
   <ul>
     <% @posts.each do |post| %>
-<<<<<<< HEAD
       <li><%=post.text%></li>
-=======
-      <li><%=post.text  %></li>
->>>>>>> b96defa701b92057abab41fb039951bfa2a68ff1
     <% end %>
   </ul>
 </div>

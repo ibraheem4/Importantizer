@@ -2,9 +2,7 @@ class EventsController < ApplicationController
   include HTTParty
   
   def index
-    p "*" * 10
-    # p request.body.name
-    render :nothing => true, :status => 200
+    p "Index page"
   end
 
   def create

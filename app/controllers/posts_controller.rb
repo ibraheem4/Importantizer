@@ -32,7 +32,6 @@ class PostsController < ApplicationController
 		@posts = display_with_key_words(search_params)
 		message = render partial: 'posts/sms'
 		send_message(ENV['NUMBER'], message)
-
 		respond_to do |format|
 			format.js {}
 		end

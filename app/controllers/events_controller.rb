@@ -55,15 +55,35 @@ class EventsController < ApplicationController
     p token = event.token
     p get_user_info(user_id, token)
     url = @base_url + @method
-    p response = HTTParty.post(url, query:{
-      'to' => toWho,
-      'token' => token,
-      'flockml' => style_important(text)
-      })
+    # p response = HTTParty.post(url, query:{
+    #   'to' => toWho,
+    #   'token' => token,
+    #   # 'flockml' => style_important(text),
+    #   'text' => text,
+    #   'attachments[0]' => {
+    #     'title' => 'attatchment title',
+    #     'description' => 'Important',
+    #     'views' => {
+    #       'html' => {
+    #         'inline' => "<b> test </b>",
+    #         "width" => 400,
+    #         "height" => 500
+    #       }
+    #     }
+    #   }
+    # })
+
+    p respose = HTTParty.post(url, body: "to=#{toWho}&token=#{token}&text=#{text}")
+    # , 
+    # :query_string_normalizer => proc {|query|
+    # query.map do |key, value|
+    #   value.map {|v| "#{key}=#{v}"}
+    # end.join('&')})
   end
 
   def style_important(text)
-    styled_text = "<b stle='clor: red;' > #{text} </b>"
+    # style property is not work on flockml
+    styled_text = "<b> #{text} </b>"
   end
 
 end

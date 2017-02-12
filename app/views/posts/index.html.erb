@@ -8,7 +8,7 @@
 </div>
 
 <div>
-  <%= form_tag search_path, method: :get, class: "navbar-form navbar-left search-form" do %>
+  <%= form_tag search_path, remote: true, method: :get, class: "navbar-form navbar-left search-form" do %>
     <%= text_field_tag(
         :search,
         params[:search],
@@ -19,7 +19,7 @@
   <% end %>
 </div>
 
-<div>
+<div class='important-posts-list'>
   <ul>
     <% @posts.each do |post| %>
       <li><%=post.text%></li>

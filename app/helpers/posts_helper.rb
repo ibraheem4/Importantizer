@@ -1,4 +1,5 @@
 module PostsHelper
+  include TextSummarizerHelper
 
 
 
@@ -15,12 +16,17 @@ module PostsHelper
     output = []
     output << key_words(arr)
     output << Important.all
-    output.flatten
+    output.flatten!
+
     output.sort_by(&:created_at)
   end
 
   def display_without_key_words
     Important.all.sort_by(&:created_at)
+  end
+
+  def summarize
+    get_summary(make_to_text)
   end
 
 
@@ -32,4 +38,5 @@ module PostsHelper
     end
     output.flatten.uniq
   end
+
 end

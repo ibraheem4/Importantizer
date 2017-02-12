@@ -23,6 +23,8 @@ class PostsController < ApplicationController
 	end
 
 	def search_params
+
 		search_arr(params[:search])
 	end
 end
+

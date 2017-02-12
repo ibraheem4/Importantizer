@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 	end
 
 	def search
+    response.headers.except! 'X-Frame-Options'
 		@posts = display_with_key_words(search_params)
     @params = search_params()
     p 'test' * 10
@@ -29,8 +30,8 @@ class PostsController < ApplicationController
 	end
 
 	def sms
-		@posts = display_without_key_words
-    message = render_to_string 'posts/sms.html'
+		@posts = Important.all[-2..-1]
+    message =  @posts.map(&:text).join(" ")
 		send_message(ENV['NUMBER'], message)
 		respond_to do |format|
 			format.js {}

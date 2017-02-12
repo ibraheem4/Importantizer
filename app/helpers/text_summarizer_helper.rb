@@ -16,6 +16,6 @@ module TextSummarizerHelper
           "text" => string
         }
       )
-    response["sentences"]
+    p response["sentences"]
   end
 end

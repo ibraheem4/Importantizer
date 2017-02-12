@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   include HTTParty
-  
+  include EventsHelper
   def index
     p "Index page"
   end
@@ -9,10 +9,13 @@ class EventsController < ApplicationController
     p "*" * 10
     text = params[:text]
     command = params[:command]
+
     user_id = params[:userId]
     method_name = params[:name]
     if command == 'imp'
       send_message(user_id,text)
+      # save the important text in DB
+      Important.create(user_id: user_id, text: text)
       p 'command is imp!'
       render :nothing => true, :status => 200
     elsif method_name == 'app.install'
@@ -42,17 +45,25 @@ class EventsController < ApplicationController
     # render :nothing => true, :status => 200
   end
 
+  private
   def send_message(user_id,text)
     @base_url = 'https://api.flock.co/v1'
     @method = '/chat.sendMessage'
+    toWho = 'g:106443_lobby'
     p '*' * 10
     p event = Event.find_by(user_id: user_id)
     p token = event.token
+    p get_user_info(user_id, token)
     url = @base_url + @method
     p response = HTTParty.post(url, query:{
-      'to' => user_id,
+      'to' => toWho,
       'token' => token,
-      'text' => text
+      'flockml' => style_important(text)
       })
   end
+
+  def style_important(text)
+    styled_text = "<b stle='clor: red;' > #{text} </b>"
+  end
+
 end

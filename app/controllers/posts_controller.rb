@@ -3,12 +3,13 @@ class PostsController < ApplicationController
 	helper_method :search_params
 	def index
 		@posts = display_without_key_words
-    response.headers.except! 'X-Frame-Options'
+		response.headers.except! 'X-Frame-Options'
+
 	end
 
 	def create
-		p @user_id = params['from']
-		p @text = params['text']
+		@user_id = params['from']
+		@text = params['text']
 		sleep(2)
 		@imp =  Important.find_by(text: @text)
 
@@ -19,10 +20,14 @@ class PostsController < ApplicationController
 
 	def search
 		@posts = display_with_key_words(search_params)
-		render 'index'
+		respond_to do |format|
+			format.js {}
+			format.html {render 'index'}
+		end
 	end
 
 	def search_params
+
 		search_arr(params[:search])
 	end
 end

@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 
 	def search
 		@posts = display_with_key_words(search_params)
+    p 'test' * 10
 		respond_to do |format|
 			format.js {}
 			format.html {render 'index'}

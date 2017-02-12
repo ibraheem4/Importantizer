@@ -15,6 +15,7 @@ module PostsHelper
     output = []
     output << key_words(arr)
     output << Important.all
+    output.flatten!
     output.sort_by(&:created_at)
   end
 

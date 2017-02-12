@@ -20,9 +20,11 @@ class PostsController < ApplicationController
 
 
 	def search_params
-		output = []
-		params.each do |key,value|
-			if key.inlcude?("search") then output << value end
-		end
+		# output = []
+		# params.each do |key,value|
+		# 	if key.include?("search") then output << value end
+		# end
+    []
 	end
 end
+

@@ -25,7 +25,7 @@
       </div>
       <div class="senderChild">
         <div class="minute_separator">
-          <span class="chat_message_time"><%=post.created_at  %></span>
+          <span class="chat_message_time"><%= time_ago_in_words(post.created_at) %> ago</span>
           <div class="minute_child"><div class="chat_message chat_message_peer" >
             <div class="messageContext" tabindex="1" style="display: block;"><div class="overlay-app-item protip-item" data-rootkey="messageContext" ><div class="copy-icon overlay-app-icon" style="pointer-events: none;"></div></div><div class="overlay-app-item protip-item" data-rootkey="messageContext"><div style="-webkit-mask: url(&quot;https://a.flockusercontent2.com/708cae014829369194c4994d&quot;) 0% 0% / cover no-repeat; pointer-events: none;" class="overlay-app-icon"></div></div></div>
             <div class="chat_message_right">

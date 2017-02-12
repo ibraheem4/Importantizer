@@ -14,17 +14,19 @@ class EventsController < ApplicationController
     if command == 'imp'
       send_message(user_id,text)
       p 'command is imp!'
-    end
-    if method_name == 'app.install'
+      render :nothing => true, :status => 200
+    elsif method_name == 'app.install'
       p 'app install called!'
       token = params[:token]
       # delete old tokens
-      # old_events = Event.where(user_id: user_id)
-      # old_events.destroy_all
+      old_events = Event.where(user_id: user_id)
+      old_events.destroy_all
       Event.create!(user_id: user_id, token: token)
+      render :nothing => true, :status => 200
     else method_name == 'app.uninstall'
       event = Event.find_by(user_id: user_id)
-      # event.destroy
+      event.destroy
+      render :nothing => true, :status => 200
     end
     # @base_url = 'https://api.flock.co/v1'
     # @method = '/chat.sendMessage'
@@ -37,7 +39,7 @@ class EventsController < ApplicationController
     #   'token' => token,
     #   'text' => text
     #   })
-    render :nothing => true, :status => 200
+    # render :nothing => true, :status => 200
   end
 
   def send_message(user_id,text)

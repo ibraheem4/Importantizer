@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 	def index
-		p "Posts!"
+    # p request
+    response.headers.except! 'X-Frame-Options'
+    render plain: "Hello world"
 	end
 end

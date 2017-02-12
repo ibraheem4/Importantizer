@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 	end
 
 	def sms
-		@posts = Important.all[-2..-1]
+		@posts = Important.all
     message =  @posts.map(&:text).join(" ")
 		send_message(ENV['NUMBER'], message)
 		respond_to do |format|
@@ -42,4 +42,10 @@ class PostsController < ApplicationController
 
 		search_arr(params[:search])
 	end
+
+  def summary
+    respond_to do |format|
+      format.js
+    end
+  end
 end

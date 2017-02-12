@@ -4,3 +4,411 @@ body {
 }
 
 @import url(https://apps-static.flock.co/fonts/proxima-nova-a374edd1bfd78ad243eed7067a7c72053d0b6877/proxima-nova.css);
+
+/* line 537, ../conversation/styles/_MessageArea.scss */
+.chat_message_sender {
+  color: #454545;
+  /*display: none;*/
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 5px;
+  text-transform: capitalize;
+}
+
+input[type=search] {
+  color: red;
+  text-align: right;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  letter-spacing: 4px;
+  text-shadow: 0 0 2px black;
+  word-spacing: 20px;
+}
+
+/* line 754, ../conversation/styles/_MessageArea.scss */
+.chat_message_pane .affiliationChangeMessage .displayPic, .chat_message_pane .affiliationChangeMessage .chat_message_sender {
+  display: none !important;
+}
+
+/* line 87, styles/_base.scss */
+.chatGroupTab .chat_message_sender {
+  display: inline-block !important;
+}
+
+/* line 13, ../../themes/blue/decorators/_emoji.scss */
+.chat_message_body .emoji.emoji--large {
+  width: 32px;
+  height: 32px;
+}
+
+/* line 455, ../conversation/styles/_MessageArea.scss */
+.chat_message_pane .chat_message div.chat_message_body:last-child {
+  padding-bottom: 5px;
+}
+
+/* line 774, ../conversation/styles/_MessageArea.scss */
+.chat_message_pane .chat_message_body {
+  padding: 3px 75px 0 5px;
+  white-space: pre-wrap;
+  line-height: 22px;
+  word-wrap: break-word;
+}
+/* line 782, ../conversation/styles/_MessageArea.scss */
+.chat_message_pane .chat_message_body.stickerPreview img {
+  width: 130px;
+  height: 130px;
+  margin: 10px 0;
+}
+/* line 789, ../conversation/styles/_MessageArea.scss */
+.chat_message_pane .chat_message_body * {
+  padding: 0;
+  margin: 0;
+}
+/* line 794, ../conversation/styles/_MessageArea.scss */
+.chat_message_pane .chat_message_body a {
+  text-decoration: underline;
+}
+/* line 798, ../conversation/styles/_MessageArea.scss */
+.chat_message_pane .chat_message_body b {
+  font-weight: 600;
+}
+/* line 802, ../conversation/styles/_MessageArea.scss */
+.chat_message_pane .chat_message_body br {
+  line-height: 20px;
+}
+/* line 806, ../conversation/styles/_MessageArea.scss */
+.chat_message_pane .chat_message_body .emoji {
+  margin: 0 !important;
+}
+/* line 810, ../conversation/styles/_MessageArea.scss */
+.chat_message_pane .chat_message_body .mention {
+  background: #eee;
+  font-size: 14px;
+  padding: 0 5px;
+  white-space: nowrap;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 818, ../conversation/styles/_MessageArea.scss */
+.chat_message_pane .chat_message_body .mentions_me {
+  background: #F8745B;
+  color: #fff;
+}
+
+/* line 525, ../conversation/styles/_MessageArea.scss */
+.senderOpenImage {
+  cursor: pointer;
+}
+
+/* line 840, ../conversation/styles/_MessageArea.scss */
+.displayPic {
+  float: left;
+  left: 10px;
+  top: 6px;
+  width: 40px;
+}
+/* line 845, ../conversation/styles/_MessageArea.scss */
+.displayPic img {
+  float: left;
+  height: 32px;
+  margin: 0 10px 15px 0;
+  width: 32px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 1, styles/_common.scss */
+.displayPic img {
+  width: 34px;
+  height: 34px;
+  margin: 1px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 142, ../../themes/blue/_xmppReceipt.scss */
+.onlyHistory .history_messages .daySeparator:last-child .sender_or_info:last-child .minute_separator:last-child .chat_message:last-child .xmpp_receipt.read,
+.liveMessages .daySeparator:last-child .sender_or_info:last-child .minute_separator:last-child .chat_message:last-child .xmpp_receipt.read,
+.onlyHistory .history_messages .daySeparator:last-child .sender_or_info:last-child .minute_separator:last-child .chat_message:last-child .xmpp_receipt.sent,
+.liveMessages .daySeparator:last-child .sender_or_info:last-child .minute_separator:last-child .chat_message:last-child .xmpp_receipt.sent {
+  display: block;
+}
+
+/* line 12, ../conversation/styles/_MessageArea.scss */
+.history_messages .sender_or_info.freshly-added-message {
+  opacity: 0.1;
+  visibility: hidden;
+}
+
+/* line 89, ../conversation/styles/_MessageArea.scss */
+.sender_or_info.info_container {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* line 265, ../conversation/styles/_MessageArea.scss */
+.onlyHistory .history_messages .daySeparator:last-child .sender_or_info:last-child .minute_separator:last-child .chat_message_time,
+.liveMessages .daySeparator:last-child .sender_or_info:last-child .minute_separator:last-child .chat_message_time,
+.sender_or_info .minute_separator:hover .chat_message_time,
+.onlyHistory .history_messages .daySeparator:last-child .sender_or_info:last-child .minute_separator:last-child .read_counter,
+.liveMessages .daySeparator:last-child .sender_or_info:last-child .minute_separator:last-child .read_counter,
+.sender_or_info .minute_separator:hover .read_counter {
+  opacity: 1;
+}
+
+/* line 438, ../conversation/styles/_MessageArea.scss */
+.liveMessages .daySeparator:last-child .sender_or_info:last-child {
+  /*padding-bottom: 20px;*/
+  /*Cause the last message overlaps the conversationViewFooter*/
+}
+
+/* line 497, ../conversation/styles/_MessageArea.scss */
+.sender_or_info {
+  border-top: 1px dashed #eeeeee;
+  padding-top: 17px;
+  margin: 20px 0px 20px 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* This block and the one above were conflicting during a merge and I'm not really sure which one to pick.
+      padding-top:2px;
+      margin: 17px;
+      margin-right: 10px;
+  */
+}
+/* line 508, ../conversation/styles/_MessageArea.scss */
+.sender_or_info:last-child {
+  margin: 20px 0 0;
+}
+
+/* line 884, ../conversation/styles/_MessageArea.scss */
+.message_area_root .channel .channelChild .sender_or_info:first-child {
+  border-bottom: none;
+  border-top: none;
+  margin-top: 0;
+}
+
+/* line 519, ../conversation/styles/_MessageArea.scss */
+.senderChild {
+  padding-left: 0px;
+  position: relative;
+  margin-left: 40px;
+}
+
+/* line 274, ../conversation/styles/_MessageArea.scss */
+.minute_separator {
+  position: relative;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 277, ../conversation/styles/_MessageArea.scss */
+.minute_separator:hover {
+  background-color: #F2f2f2;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 280, ../conversation/styles/_MessageArea.scss */
+.minute_separator:hover .FileShareMessage {
+  background-color: #f8f8f8;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 285, ../conversation/styles/_MessageArea.scss */
+.minute_separator:hover .messageContext,
+.minute_separator .messageMenuOpen .messageContext, .minute_separator:hover .messageContext:after {
+  visibility: visible;
+  opacity: 1;
+  -moz-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+/* line 293, ../conversation/styles/_MessageArea.scss */
+.minute_separator .messageContext {
+  position: absolute;
+  top: -20px;
+  right: 5px;
+  min-height: 16px;
+  padding: 1px 4px;
+  visibility: hidden;
+  opacity: 0;
+  background: #FFFFFF;
+  z-index: 100;
+  border: 1px solid #dedede;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 307, ../conversation/styles/_MessageArea.scss */
+.minute_separator .messageContext .hidden {
+  display: none;
+}
+/* line 311, ../conversation/styles/_MessageArea.scss */
+.minute_separator .messageContext .overlay-app-item {
+  float: left;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+/* line 316, ../conversation/styles/_MessageArea.scss */
+.minute_separator .messageContext .overlay-app-item .overlay-app-icon {
+  width: 15px;
+  display: block;
+}
+/* line 320, ../conversation/styles/_MessageArea.scss */
+.minute_separator .messageContext .overlay-app-item .overlay-app-icon.delete-icon, .minute_separator .messageContext .overlay-app-item .overlay-app-icon.copy-icon {
+  width: 12px;
+}
+/* line 328, ../conversation/styles/_MessageArea.scss */
+.minute_separator .messageContext .overlay-app-item:hover .overlay-app-icon {
+  background: #0abe50;
+}
+/* line 334, ../conversation/styles/_MessageArea.scss */
+.minute_separator .messageContext .overlay-menu-arrow {
+  position: relative;
+  float: left;
+  width: 12px;
+  height: 15px;
+  padding: 4px 7px;
+  cursor: pointer;
+  -moz-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+/* line 343, ../conversation/styles/_MessageArea.scss */
+.minute_separator .messageContext .overlay-menu-arrow:before, .minute_separator .messageContext .overlay-menu-arrow:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+/* line 353, ../conversation/styles/_MessageArea.scss */
+.minute_separator .messageContext .overlay-menu-arrow:before {
+  background: #697178;
+  width: 14px;
+  height: 14px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 360, ../conversation/styles/_MessageArea.scss */
+.minute_separator .messageContext .overlay-menu-arrow:after {
+  border-top: 5px solid #fff;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+/* line 367, ../conversation/styles/_MessageArea.scss */
+.minute_separator .messageContext.popupMenuOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* line 223, ../conversation/styles/_MessageArea.scss */
+.chat_message_time {
+  color: #818d95;
+  font-size: 11px;
+  position: absolute;
+  bottom: 11px;
+  padding-right: 0px;
+  right: 22px;
+  z-index: 9;
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* line 113, ../../themes/blue/_xmppReceipt.scss */
+.chat_message_peer .xmpp_receipt.reading {
+  position: absolute;
+  bottom: 8px;
+  right: 4px;
+  background: #969696;
+}
+/* line 120, ../../themes/blue/_xmppReceipt.scss */
+.chat_message_peer .xmpp_receipt.read {
+  position: absolute;
+  right: 4px;
+  bottom: 8px;
+  width: 4px;
+  height: 4px;
+  background: none;
+  border: 1px solid #cecece;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 131, ../../themes/blue/_xmppReceipt.scss */
+.chat_message_peer .xmpp_receipt.delivered {
+  position: absolute;
+  bottom: 8px;
+  right: 4px;
+}
+
+/* line 138, ../../themes/blue/_xmppReceipt.scss */
+.chat_message .xmpp_receipt.dummyReciept {
+  background: none;
+}
+
+/* line 95, ../conversation/styles/_MessageArea.scss */
+.chat_message {
+  color: #262626;
+  margin: 0;
+  position: relative;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  -webkit-user-select: text;
+  user-select: text;
+  -ms-user-select: text;
+}
+
+/* line 833, ../conversation/styles/_MessageArea.scss */
+.chat_message_right {
+  bottom: 6px;
+  position: absolute;
+  right: 0;
+  min-width: 16px;
+}
+
+/* line 286, styles/_base.scss */
+.chatGroupTab .chat_message_pane .chat_message_body {
+  padding-right: 100px;
+}
+/* line 288, styles/_base.scss */
+.chatGroupTab .chat_message_pane .chat_message_body.imagePreview {
+  padding-top: 5px;
+}
+
+/* line 107, ../../themes/blue/_xmppReceipt.scss */
+.chat_message_peer .xmpp_receipt {
+  width: 6px;
+  height: 6px;
+  background: #4593E2;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}

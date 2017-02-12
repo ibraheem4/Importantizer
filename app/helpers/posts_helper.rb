@@ -1,5 +1,8 @@
 module PostsHelper
+
+
   
+
   def make_to_text
     Post.all.map(&:text).join('. ')
   end

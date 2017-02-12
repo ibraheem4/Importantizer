@@ -1,6 +1,59 @@
-<%# react_component('Post', {posts: @posts}, {prerender: false}) %>
+<h1>Important Messages</h1>
 
-<!-- text summarizer test -->
+<div>
+  <span>
+    <strong>vilde</strong>.
+    joined #general. Also, <a href="/team/yusuke" target="/team/yusuke">@yusuke</a> joined..
+  </span>
+</div>
+
+<div>
+  <%= form_tag search_path, method: :get, class: "navbar-form navbar-left search-form" do %>
+    <%= text_field_tag(
+        :search,
+        params[:search],
+        placeholder: "Search",
+        class: "form-control"
+    ) %>
+  <% end %>
+</div>
+
+<div>
+  <% @posts.each do |post| %>
+
+    <div class="sender_or_info">
+      <div class="picWrapper">
+        <div class="displayPic" title="">
+          <img src="https://i.flockusercontent2.com/geeehzzh0t8tgyzz?r=1157408321" class="senderOpenImage">
+        </div>
+        <div class="chat_message_sender" style="cursor: pointer;"><%=post.user_id  %></div>
+      </div>
+      <div class="senderChild">
+        <div class="minute_separator">
+          <span class="chat_message_time"><%=post.created_at  %></span>
+          <div class="minute_child"><div class="chat_message chat_message_peer" >
+            <div class="messageContext" tabindex="1" style="display: block;"><div class="overlay-app-item protip-item" data-rootkey="messageContext" ><div class="copy-icon overlay-app-icon" style="pointer-events: none;"></div></div><div class="overlay-app-item protip-item" data-rootkey="messageContext"><div style="-webkit-mask: url(&quot;https://a.flockusercontent2.com/708cae014829369194c4994d&quot;) 0% 0% / cover no-repeat; pointer-events: none;" class="overlay-app-icon"></div></div></div>
+            <div class="chat_message_right">
+              <div class="xmpp_receipt read " title="Read by you"></div></div>
+              <div class="chat_message_body"><%=post.text  %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+
+<style>
+  body {
+  margin: 0px;
+  font-family: "Proxima Nova",Arial,sans-serif;
+  }
+</style>
+
+<style type="text/css">@import url(https://apps-static.flock.co/fonts/proxima-nova-a374edd1bfd78ad243eed7067a7c72053d0b6877/proxima-nova.css);</style>
+
 <%= summarize %>
 
 <div class="sms-button">

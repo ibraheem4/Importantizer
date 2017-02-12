@@ -15,8 +15,7 @@ class Post extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <h1>Important messages</h1>
+        <div className="chat-message">
           {this.renderPosts()}
         </div>
       </div>

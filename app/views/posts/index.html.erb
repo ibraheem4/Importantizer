@@ -50,9 +50,9 @@
 
 <br>
 <%= link_to "Show today's conversion summary", summary_path, method: :post, remote: true%>
-<div class="summary">
-  <%# render partial: 'summarize', locals: {messages_posts: summarize} %>
-</div>
+<!-- <div class="summary"> -->
+  <%= render partial: 'summarize', locals: {messages_posts: summarize} %>
+<!-- </div> -->
 <br>
 <div class="sms-button">
 <%= link_to "Send Out Messages", sms_path, method: :post, remote: true%>

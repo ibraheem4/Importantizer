@@ -28,7 +28,7 @@ module PostsHelper
   def key_words(arr)
     output = []
     arr.each do |word|
-      output << Post.all.select{|post| /#{word}/.match(post.text) != nil}
+      output << Post.all.select{|post| /#{word.downcase}/.match(post.text.downcase) != nil}
     end
     output.flatten.uniq
   end

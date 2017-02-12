@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
 	def search
 		@posts = display_with_key_words(search_params)
+		render 'index'
 	end
 
 	def search_params

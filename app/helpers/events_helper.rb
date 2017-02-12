@@ -9,6 +9,9 @@ module EventsHelper
      }
   end
 
+  def make_to_text
+    Post.all.map(&:text).join('. ')
+  end
 
   def search_arr(string)
     string.split(',').map(&:strip)

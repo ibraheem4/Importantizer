@@ -18,7 +18,7 @@
           <% tkn = Event.find_by(user_id: post.user_id).token %>
           <img src=<%= get_user_info(post.user_id, tkn)[:profile_image] %>>
         </div>
-        <div class="chat_message_sender" style="cursor: pointer;"><%=post.user_id  %></div>
+        <div class="chat_message_sender" style="cursor: pointer;"><%= get_user_info(post.user_id, tkn)[:first_name] %> <%= get_user_info(post.user_id, tkn)[:last_name] %></div>
       </div>
       <div class="senderChild">
         <div class="minute_separator">

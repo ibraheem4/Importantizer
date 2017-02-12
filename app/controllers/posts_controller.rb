@@ -20,9 +20,20 @@ class PostsController < ApplicationController
 
 	def search
 		@posts = display_with_key_words(search_params)
+    @params = search_params()
+    p 'test' * 10
 		respond_to do |format|
 			format.js {}
 			format.html {render 'index'}
+		end
+	end
+
+	def sms
+		@posts = display_without_key_words
+    message = render_to_string 'posts/sms.html'
+		send_message(ENV['NUMBER'], message)
+		respond_to do |format|
+			format.js {}
 		end
 	end
 

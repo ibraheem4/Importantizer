@@ -1,0 +1,2 @@
+class Important < ApplicationRecord
+end

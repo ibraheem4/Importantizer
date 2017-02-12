@@ -1,7 +1,7 @@
 module PostsHelper
 
 
-  
+
 
   def make_to_text
     Post.all.map(&:text).join('. ')
@@ -16,6 +16,7 @@ module PostsHelper
     output << key_words(arr)
     output << Important.all
     output.flatten!
+
     output.sort_by(&:created_at)
   end
 

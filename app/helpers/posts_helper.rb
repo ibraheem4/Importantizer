@@ -1,4 +1,5 @@
 module PostsHelper
+  include TextSummarizerHelper
 
 
 
@@ -24,6 +25,10 @@ module PostsHelper
     Important.all.sort_by(&:created_at)
   end
 
+  def summarize
+    get_summary(make_to_text)
+  end
+
 
   private
   def key_words(arr)
@@ -33,4 +38,5 @@ module PostsHelper
     end
     output.flatten.uniq
   end
+
 end

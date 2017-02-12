@@ -2,7 +2,8 @@ module TextSummarizerHelper
   include HTTParty
   def get_summary(string)
     base_url = "https://textanalysis-text-summarization.p.mashape.com/text-summarizer-text"
-    api_key = ENV[TS_API]
+    p '*' * 10
+      api_key = ENV["TS_API"]
     p response = HTTParty.post(
         base_url,
         headers: {
@@ -12,8 +13,9 @@ module TextSummarizerHelper
         },
         body: {
           "sentnum" => 4,
-          "text" => text
+          "text" => string
         }
       )
+    response["sentences"]
   end
 end

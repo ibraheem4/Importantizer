@@ -1,6 +1,6 @@
 # Importantizer
 
-An easier way to access important information on Flock.
+An easier way to access important information on [Flock](http://flock.co).
 -	Gives you an automatic message whenever you enter app.
 -	Has sidebar and widget with important messages summarized in a nice way. 
 -	Use command ‘/imp’ when writing message

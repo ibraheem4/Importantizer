@@ -9,6 +9,6 @@ An easier way to access important information on [Flock](http://flock.co).
 
 # Team
 - [Vilde Vevatne](https://github.com/vildevev)
-- [Matt Weingarten](https://github.com/Kalmaroso)
+- [Matt Weingarten](https://github.com/mattweingarten)
 - [Yusuke Takeuchi](https://github.com/yusuke0324)
 - [Ibraheem Abdul-Malik](https://github.com/ibraheem4)
